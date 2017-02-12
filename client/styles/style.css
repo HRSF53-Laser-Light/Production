@@ -235,10 +235,17 @@ ng-map {
   margin: 12px;
 }
 
+.location-name-container {
+  width: 80%;
+  height: 40px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .location-name {
   font-weight: 600;
-  position: absolute;
-  left: 25px;
+  position: relative;
 }
 
 .location-price {

@@ -29,6 +29,8 @@ angular.module('myApp').controller('chatterboxCtrl', function($scope, $rootScope
     * @description Gets the user email and username from the database. Takes user input ($scope.text) and updates the database with that input. Each input is added to the user that submitted it.
   */
   $scope.sendMessage = function(userId, text) {
+    console.log('sendMessage text', $scope.text)
+
     var chatEmail = databaseAndAuth.auth.currentUser.email;
     var chatUsername = chatEmail.slice(0, chatEmail.indexOf('@'));
     
