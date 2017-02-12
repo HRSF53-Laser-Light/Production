@@ -1,14 +1,14 @@
 html,
 body {
-  height:100%;
-  width:100%;
-  padding:0;
-  margin:0;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .content-div {
-  height:100%;
-  width:100%;
+  height: 100%;
+  width: 100%;
 }
 
 .btn {
@@ -30,17 +30,49 @@ body {
 /*         SIGNUP, LOGIN         */
 /*********************************/
 
-.container {
-  text-align: center;
-  background-image: url('../images/background-map.jpg'); 
+.img-container {
+  background-image: url('../images/background-map.jpg');
+  opacity: 0.5;
   background-repeat: no-repeat; 
-  background-size:cover; 
+  background-size:cover;
+  position: absolute;
+  top: 0;
   width: 100%; 
   height: 900px;
 }
 
-.logo {
-  padding: 50px 0 50px 0;
+.content-container {
+  text-align: center;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  width: 100%; 
+  height: 900px;
+  z-index: 100;
+}
+
+.title-container {
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+
+.logo-title, .logo-subtitle {
+  font-family: 'Fira Sans', sans-serif;
+  font-size: 70px;
+  font-weight: 700;
+  color: rgb(121,134,203);
+}
+
+.logo-subtitle {
+  font-size: 25px;
+  font-weight: 500;
+  color: black;
+  position: relative;
+}
+
+.signup-link,
+.signup-link:hover {
+  text-decoration: none;
 }
 
 .login {
@@ -324,43 +356,12 @@ ng-map {
   background-color: #fff;
 }
 
-/*********************************/
-/*            PROFILE            */
-/*********************************/
-
-/*.card-container.card {
-  max-width: 500px;
-}*/
-
-/*.card {
-  background-color: #FFFFFF;
-  /* just in case there no content*/
-/*  padding: 250px 0px 45px;
-  margin: 0 auto 25px;
-  margin-top: 15%x;*/
-  /* shadows and rounded borders */
-/*  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
-  -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-}*/
-
-/*.profile-img-card {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 10px;
-  display: block;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-}*/
-
-/*.profile-name-card {
-  font-size: 16px;
-  font-weight: bold;
-  text-align: center;
-  margin: 10px 0 0;
-  min-height: 1em;
-}*/
+.record-button:focus {
+  position: absolute;
+  bottom: 85px;
+  right: 1px;
+  border: 1px;
+  border-style: solid;
+  border-color: #f1f1f1;
+  background-color: #EE4116;
+}
