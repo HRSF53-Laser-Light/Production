@@ -83,5 +83,4 @@ angular.module('myApp').controller('chatterboxCtrl', function($scope, $rootScope
     $scope.$apply();
   });
 
-
 });
