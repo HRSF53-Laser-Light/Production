@@ -357,12 +357,7 @@ ng-map {
   background-color: #fff;
 }
 
-.record-button:focus {
-  position: absolute;
-  bottom: 85px;
-  right: 1px;
-  border: 1px;
-  border-style: solid;
-  border-color: #f1f1f1;
+.record-button.active {
   background-color: #EE4116;
 }
+
