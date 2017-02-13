@@ -13,12 +13,14 @@ angular.module('myApp').factory('speech', function($http, $rootScope, $q) {
 
     recognition.onstart = function() {
       console.log('onstart');
-      //show user we're listening now
+      // change record button back to white here
+      $('.record-button').addClass('active');
     };
 
     recognition.onend = function() {
       console.log('onend');
       //show user we're no longer listening
+      $('.record-button').removeClass('active');
     };
 
     recognition.onresult = function(event) {

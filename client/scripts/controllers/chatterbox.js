@@ -79,7 +79,6 @@ angular.module('myApp').controller('chatterboxCtrl', function($scope, $rootScope
   $scope.$on('voice-event', (event, args) => {
     console.log('voice-event: ', args.data);
     $scope.text = args.data;
-    // change record button back to white here
     $scope.$apply();
   });
 
