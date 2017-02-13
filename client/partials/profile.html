@@ -9,31 +9,28 @@
     <div class="profile-container">
       <div ng-controller="registerLogInLogOut">
         <!-- Toolbar --> 
+        <img class="profile-pic" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/A_wallpaper_pattern_with_squares.svg/2000px-A_wallpaper_pattern_with_squares.svg.png"/>
+
         <md-toolbar layout="row" class="toolbar md-whiteframe-z2 md-primary md-hue-3">
-          <span class="toolbar-group">
-            <a href="#" class="toolbar-link" ng-click="logOut()" ng-show="loggedIn">Logout</a>
+          <span>
+            <md-button id="btnLogout" type="submit" ng-click="goHome()" ng-show="loggedIn">Back</md-button>
           </span>
         </md-toolbar>
 
-        <input type="text" ng-model="newPassword">
-        <md-button type="submit" ng-click="changePassword()">Change Password</md-button>
+        <div class="password-container">
+          <p>Manage Password</p>
+          <span>Current Password</span>
+          <input id="current-password-input" type="password" ng-model="currentPassword" placeholder="Current password">
+          <br>
+          <span>New Password</span>
+          <input id="new-password-input" type="password" ng-model="newPassword" placeholder="Enter new password">
+          <div class="submit-container">
+            <md-button id="submit-password" type="submit" ng-click="changePassword()">Submit</md-button>
+          </div>
+        </div>
       </div>
+      
 
-      <div id="sendMessages">
-        <input type="text" ng-model="message">
-        <select ng-model="target">
-          <option ng-repeat="currentUser in currentUsers">{{ currentUser.email }}</option>
-        </select>
-        <md-button type="submit" ng-click="sendMessage()">Send</md-button>
-      </div>
-      <div id="privateMessages" ng-controller="registerLogInLogOut">
-        <ul>
-          <li ng-repeat="messageObj in privateMessages">{{ messageObj.sender }} : {{ messageObj.message }}</li>
-        </ul>
-      </div>
-      <div>
-        <md-button id="btnLogout" type="submit" ng-click="goHome()" ng-show="loggedIn">Back</md-button>
-      </div>
     </div>
   </body>
 </html>
