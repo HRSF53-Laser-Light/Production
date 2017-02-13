@@ -326,6 +326,7 @@ ng-map {
   margin-bottom: 0px;
   padding: 3px;
   font-size: 12px;
+  overflow: scroll;
 }
 
 .chat-input {
