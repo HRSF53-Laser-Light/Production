@@ -1,4 +1,5 @@
 <div ng-controller="initializeMap">
+
   <!-- Toolbar --> 
   <md-toolbar layout="row" class="toolbar md-whiteframe-z2 md-primary md-hue-3" ng-controller="registerLogInLogOut">
     <span class="toolbar-title">
@@ -12,7 +13,7 @@
 
   <div flex layout="row" class="content-div" ng-controller="chatterboxCtrl">
 
-    <!-- Sidenav Container (Container #3 )-->
+    <!-- Sidenav -->
     <md-sidenav layout="column" md-is-locked-open="true" class="sidenav md-whiteframe-z4">
       <md-subheader class="md-no-sticky">
         <md-tabs md-dynamic-height="" class="sidenav-tabs" md-stretch-tabs="always">
@@ -24,21 +25,18 @@
 
       <md-list layout="column">
         <!-- Generate list item for each location result -->
-
         <md-list-item class="location-list" ng-repeat="location in foursquareLocations track by $index" ng-click="getLocInfo(location.venue.location.lat, location.venue.location.lng, location.venue.name, location.venue.location.formattedAddress)" >
           <div class="location-name-container">
             <span class="location-name" ng-click="getLocInfo(location.venue.location.lat, location.venue.location.lng, location.venue.name, location.venue.location.formattedAddress)" layout-align="start">{{ location.venue.name }}</span>
           </div>
           <span class="location-price" layout-align="end">{{ '$'.repeat(location.venue.price.tier || 1 )}}</span>
-
         </md-list-item>
       </md-list>
 
-      <!-- Chat Bottom Sheet-->
+      <!-- Chat -->
       <script type="text/ng-template" id="chat-template.html">
         <md-bottom-sheet class="chat-sheet md-list md-has-header">
-
-          <div class="panel" ng-show="showMessages" ng-init="fetchMessage()">
+          <div class="panel" style="overflow:auto" ng-show="showMessages" ng-init="fetchMessage()">
             <div ng-repeat="message in messageObj">
               <b>{{ message.username }}</b>: {{ message.text }}
             </div>
@@ -54,12 +52,11 @@
     </md-sidenav>
 
 
-    <!-- Map Container (Container #4) -->
+    <!-- Map -->
     <md-content flex id="content">
-
       <div class="map-wrapper">
         <md-button flex="50" class="btn-chat-open md-primary md-raised" ng-click="showChat()">Chat</md-button>
-        <ng-map class="myMap" center="current-location" zoom="16" default-style="false">
+        <ng-map class="myMap" center="current-location" zoom="14" default-style="false">
           <shape id="circle" name="circle" centered="true" 
             center="{{avgLat}} {{avgLon}}"
             stroke-color='#8c00ff' stroke-opacity="0.25" stroke-weight="2" fill-color='#8c00ff' fill-opacity="0.15"
@@ -78,9 +75,4 @@
 
   </div>
 </div>
-
 <div ng-controller="watchCurrentUserLocation"></div>
-
-
-    
-</div>

@@ -51,7 +51,7 @@ angular.module('myApp').controller('chatterboxCtrl', function($scope, $rootScope
     * @memberOf chatterboxCtrl
     * @description Gets all the chats from the database, attaches them to the scope, and then renders the updated scope ($scope.apply())
   */
-  $scope.fetchMessage = function() {
+  $scope.fetchMessage = function(event) {
     console.log('in fetchMessage')
     
     var ref = database.ref('chats');
