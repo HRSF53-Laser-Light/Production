@@ -3,6 +3,7 @@
   * @description Controller for that handles user registration (new user), user login, and user logout. Makes use of databaseAndAuth and runListeners factories.
 */
 angular.module('myApp').controller('registerLogInLogOut', function($rootScope, $scope, $location, databaseAndAuth, runListeners) {
+  
   /**
     * @function '$scope.register'
     * @memberOf registerLogInLogOut
