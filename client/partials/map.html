@@ -24,9 +24,13 @@
 
       <md-list layout="column">
         <!-- Generate list item for each location result -->
+
         <md-list-item class="location-list" ng-repeat="location in foursquareLocations track by $index" ng-click="getLocInfo(location.venue.location.lat, location.venue.location.lng, location.venue.name, location.venue.location.formattedAddress)" >
-          <span class="location-name" ng-click="getLocInfo(location.venue.location.lat, location.venue.location.lng, location.venue.name, location.venue.location.formattedAddress)" layout-align="start">{{ location.venue.name }}</span>
+          <div class="location-name-container">
+            <span class="location-name" ng-click="getLocInfo(location.venue.location.lat, location.venue.location.lng, location.venue.name, location.venue.location.formattedAddress)" layout-align="start">{{ location.venue.name }}</span>
+          </div>
           <span class="location-price" layout-align="end">{{ '$'.repeat(location.venue.price.tier || 1 )}}</span>
+
         </md-list-item>
       </md-list>
 
@@ -40,11 +44,11 @@
             </div>
           </div>
           <form class="submit-chat">
-            <input type="text" size="500" ng-model="text" style="width: 95%" autofocus class="chat-input"/> {{text}}
+            <input type="text" size="500" ng-model="text" style="width: 95%" autofocus class="chat-input"/>
             <br>
             <md-button type="submit" class="chat-button" ng-click="sendMessage()">Send</md-button>
           </form>
-          <md-button class="record-button" ng-click="record()">record</md-button>
+          <md-button class="record-button" ng-click="record()">Record</md-button>
         </md-bottom-sheet>
       </script>
     </md-sidenav>

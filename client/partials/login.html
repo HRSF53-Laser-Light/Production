@@ -1,13 +1,17 @@
-<div class="container">
-<img class="logo" src="../images/logo-palfinder.png" width="350"/>
+<div class="img-container"></div>
+<div class="content-container">
+  <div class="title-container">
+    <div class="logo-title">CrissCross</div>
+    <div class="logo-subtitle"> Choose where to meet up next </div>
+  </div>
+<!--   <img class="logo" src="../images/logo-palfinder.png" width="350"/>
+   -->
   <div class="card card-container">
     <div class="login" ng-controller="registerLogInLogOut">
       <form class="form-signin">
         <div class="form-group">
           <span id="reauth-email" class="reauth-email"></span>
-          <!-- <p class="input_title">Email</p> -->
           <input type="text" id="inputEmail" class="login_box" ng-model="email" placeholder="email" ng-show="!loggedIn" required autofocus>
-          <!-- <p class="input_title">Password</p> -->
           <input type="password" ng-model="password" placeholder="password" ng-show="!loggedIn" required> 
 
           <div id="remember" class="checkbox">
@@ -18,7 +22,7 @@
           <button class="btn btn-default" type="submit" ng-click="logIn()" ng-show="!loggedIn">LOGIN</button>
 
           <div>{{ badLogin }}</div>
-          <a href="" ng-click="signUp()">Don't have an account? <strong>Signup</strong> ...</a>
+          <a href="" class="signup-link" ng-click="signUp()"> Don't have an account? <strong>Signup</strong> ...</a>
         </div>
       </form>
     </div>
